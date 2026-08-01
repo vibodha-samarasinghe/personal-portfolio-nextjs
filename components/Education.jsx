@@ -176,7 +176,7 @@ export default function Education() {
 
 
             <p className="mt-3 text-gray-300">
-              Southlands School, Galle
+              Sri Sangamitta Girls' College,Matale
             </p>
 
 
@@ -275,7 +275,7 @@ export default function Education() {
 
 
             <p className="mt-3 text-gray-300">
-              Southlands School, Galle
+              Sri Sangamitta Girls' College,Matale
             </p>
 
 
