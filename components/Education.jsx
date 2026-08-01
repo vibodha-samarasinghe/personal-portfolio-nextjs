@@ -24,9 +24,7 @@ export default function Education() {
       "
     >
 
-
       <div className="max-w-5xl w-full">
-
 
 
         <h2
@@ -45,7 +43,6 @@ export default function Education() {
 
 
 
-
         {/* University */}
 
 
@@ -55,43 +52,65 @@ export default function Education() {
           backdrop-blur-xl
           border
           border-white/20
-          text-white
           rounded-3xl
-          p-8
+          p-6
           shadow-2xl
           mb-6
           hover:bg-white/20
           transition
+          flex
+          items-center
+          gap-6
           "
         >
 
 
-          <h3
+          {/* KDU Logo */}
+
+          <img
+            src="/KDU.png"
+            alt="KDU Logo"
             className="
-            text-2xl
-            font-bold
+            w-16
+            h-16
+            md:w-20
+            md:h-20
+            rounded-full
+            object-contain
+            bg-black
+            p-1
+            border
+            border-white/20
+            shadow-lg
             "
-          >
-
-            Bachelor of Information and Communication Technology (BICT)
-
-          </h3>
+          />
 
 
 
-          <p className="mt-3 text-gray-300">
+          <div>
 
-            General Sir John Kotelawala Defence University (KDU)
+            <h3
+              className="
+              text-xl
+              md:text-2xl
+              font-bold
+              text-white
+              "
+            >
+              Bachelor of Information and Communication Technology (BICT)
+            </h3>
 
-          </p>
+
+            <p className="mt-3 text-gray-300">
+              General Sir John Kotelawala Defence University (KDU)
+            </p>
 
 
+            <p className="mt-2 text-gray-400">
+              Faculty of Technology | ICT Undergraduate
+            </p>
 
-          <p className="mt-2 text-gray-300">
-
-            Faculty of Technology | ICT Undergraduate
-
-          </p>
+          </div>
 
 
         </div>
@@ -105,71 +124,96 @@ export default function Education() {
 
 
         <div
-
           onClick={() => setShowAL(!showAL)}
-
           className="
           bg-white/10
           backdrop-blur-xl
           border
           border-white/20
-          text-white
           rounded-3xl
-          p-8
+          p-6
           shadow-2xl
           mb-6
           cursor-pointer
           hover:bg-white/20
           transition
+          flex
+          items-center
+          gap-6
           "
-
         >
 
 
-          <h3 className="text-2xl font-bold">
 
-            G.C.E Advanced Level (A/L)
+          {/* SSBV Logo */}
 
-          </h3>
+          <img
+            src="/SSBV.png"
+            alt="SSBV Logo"
+            className="
+            w-16
+            h-16
+            md:w-20
+            md:h-20
+            rounded-full
+            object-contain
+            bg-black
+            p-1
+            border
+            border-white/20
+            shadow-lg
+            "
+          />
 
 
 
-          <p className="mt-3 text-gray-300">
-
-            Click to view results
-
-          </p>
+          <div className="flex-1">
 
 
+            <h3 className="text-xl md:text-2xl font-bold text-white">
+              G.C.E Advanced Level (A/L)
+            </h3>
+
+
+            <p className="mt-3 text-gray-300">
+              Southlands School, Galle
+            </p>
+
+
+            <p className="mt-2 text-gray-400">
+              Click to view results
+            </p>
 
 
 
-          {showAL && (
+            {showAL && (
 
-            <div
-              className="
-              mt-4
-              p-4
-              rounded-xl
-              bg-black/30
-              border
-              border-white/10
-              "
-            >
+              <div
+                className="
+                mt-4
+                p-4
+                rounded-xl
+                bg-black/30
+                border
+                border-white/10
+                "
+              >
 
-              <p className="text-white font-semibold">
+                <p className="text-white font-semibold">
+                  Results: C - 2 | S - 1
+                </p>
 
-                Results: C - 2 | S - 1
+              </div>
 
-              </p>
+            )}
 
-            </div>
 
-          )}
-
+          </div>
 
 
         </div>
+
+
 
 
 
@@ -180,73 +224,95 @@ export default function Education() {
 
 
         <div
-
           onClick={() => setShowOL(!showOL)}
-
           className="
           bg-white/10
           backdrop-blur-xl
           border
           border-white/20
-          text-white
           rounded-3xl
-          p-8
+          p-6
           shadow-2xl
           cursor-pointer
           hover:bg-white/20
           transition
+          flex
+          items-center
+          gap-6
           "
-
         >
 
 
 
-          <h3 className="text-2xl font-bold">
+          {/* SSBV Logo */}
 
-            G.C.E Ordinary Level (O/L)
+          <img
+            src="/SSBV.png"
+            alt="SSBV Logo"
+            className="
+            w-16
+            h-16
+            md:w-20
+            md:h-20
+            rounded-full
+            object-contain
+            bg-black
+            p-1
+            border
+            border-white/20
+            shadow-lg
+            "
+          />
 
-          </h3>
+
+
+          <div className="flex-1">
+
+
+            <h3 className="text-xl md:text-2xl font-bold text-white">
+              G.C.E Ordinary Level (O/L)
+            </h3>
+
+
+            <p className="mt-3 text-gray-300">
+              Southlands School, Galle
+            </p>
+
+
+            <p className="mt-2 text-gray-400">
+              Click to view results
+            </p>
 
 
 
 
-          <p className="mt-3 text-gray-300">
+            {showOL && (
 
-            Click to view results
+              <div
+                className="
+                mt-4
+                p-4
+                rounded-xl
+                bg-black/30
+                border
+                border-white/10
+                "
+              >
 
-          </p>
+                <p className="text-white font-semibold">
+                  Results: A - 3 | B - 2 | C - 4
+                </p>
+
+              </div>
+
+            )}
 
 
 
-
-
-          {showOL && (
-
-            <div
-              className="
-              mt-4
-              p-4
-              rounded-xl
-              bg-black/30
-              border
-              border-white/10
-              "
-            >
-
-              <p className="text-white font-semibold">
-
-                Results: A - 3 | B - 2 | C - 4
-
-              </p>
-
-            </div>
-
-          )}
-
+          </div>
 
 
         </div>
-
 
 
 
@@ -256,5 +322,4 @@ export default function Education() {
     </section>
 
   );
-
 }
