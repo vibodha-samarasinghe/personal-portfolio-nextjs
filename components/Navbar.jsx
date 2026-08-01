@@ -7,84 +7,97 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
 
-  return (
-    <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-md z-50">
+  const links = [
+    { name: "Home", path: "#home" },
+    { name: "About", path: "#about" },
+    { name: "Education", path: "#education" },
+    { name: "Skills", path: "#skills" },
+    { name: "Projects", path: "#projects" },
+    { name: "Certificates", path: "#certificates" },
+    { name: "Contact", path: "#contact" }
+  ];
 
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+
+
+  return (
+
+    <nav
+      className="
+      fixed
+      top-0
+      left-0
+      w-full
+      z-50
+      bg-black/40
+      backdrop-blur-xl
+      border-b
+      border-white/20
+      "
+    >
+
+
+      <div
+        className="
+        max-w-7xl
+        mx-auto
+        flex
+        justify-between
+        items-center
+        px-6
+        py-4
+        "
+      >
+
 
 
         {/* Logo */}
 
-        <h1 className="text-2xl font-bold text-black">
+        <h1
+          className="
+          text-2xl
+          font-bold
+          text-white
+          "
+        >
           Vibodha
         </h1>
 
 
 
 
-        {/* Desktop Menu - Laptop */}
-
-        <ul className="hidden md:flex gap-6 font-medium">
-
-          <li>
-            <a 
-              href="#home"
-              className="text-black hover:text-gray-500"
-            >
-              Home
-            </a>
-          </li>
 
 
-          <li>
-            <a 
-              href="#about"
-              className="text-black hover:text-gray-500"
-            >
-              About
-            </a>
-          </li>
+        {/* Desktop Menu */}
 
+        <ul
+          className="
+          hidden
+          md:flex
+          gap-7
+          "
+        >
 
-          <li>
-            <a 
-              href="#education"
-              className="text-black hover:text-gray-500"
-            >
-              Education
-            </a>
-          </li>
+          {links.map((link, index) => (
 
+            <li key={index}>
 
-          <li>
-            <a 
-              href="#skills"
-              className="text-black hover:text-gray-500"
-            >
-              Skills
-            </a>
-          </li>
+              <a
+                href={link.path}
+                className="
+                text-gray-200
+                hover:text-white
+                transition
+                duration-300
+                "
+              >
 
+                {link.name}
 
-          <li>
-            <a 
-              href="#projects"
-              className="text-black hover:text-gray-500"
-            >
-              Projects
-            </a>
-          </li>
+              </a>
 
+            </li>
 
-          <li>
-            <a 
-              href="#contact"
-              className="text-black hover:text-gray-500"
-            >
-              Contact
-            </a>
-          </li>
-
+          ))}
 
         </ul>
 
@@ -92,14 +105,18 @@ export default function Navbar() {
 
 
 
-        {/* Mobile Menu Button - Phone */}
+
+
+
+        {/* Mobile Menu Button */}
 
         <button
-
           onClick={() => setOpen(!open)}
-
-          className="md:hidden text-black text-3xl"
-
+          className="
+          md:hidden
+          text-white
+          text-3xl
+          "
         >
 
           ☰
@@ -114,88 +131,60 @@ export default function Navbar() {
 
 
 
+
+
       {/* Mobile Menu */}
 
       {open && (
 
-        <div className="md:hidden bg-white shadow-md px-6 py-4">
+        <div
+          className="
+          md:hidden
+          bg-black/70
+          backdrop-blur-xl
+          border-t
+          border-white/20
+          px-6
+          py-5
+          "
+        >
 
 
-          <ul className="space-y-4 font-medium">
+          <ul
+            className="
+            space-y-4
+            "
+          >
 
 
-            <li>
-              <a
-                href="#home"
-                onClick={() => setOpen(false)}
-                className="block text-black hover:text-gray-500"
-              >
-                Home
-              </a>
-            </li>
+            {links.map((link, index) => (
+
+              <li key={index}>
+
+                <a
+                  href={link.path}
+                  onClick={() => setOpen(false)}
+                  className="
+                  block
+                  text-gray-200
+                  hover:text-white
+                  transition
+                  "
+                >
+
+                  {link.name}
+
+                </a>
 
 
+              </li>
 
-            <li>
-              <a
-                href="#about"
-                onClick={() => setOpen(false)}
-                className="block text-black hover:text-gray-500"
-              >
-                About
-              </a>
-            </li>
+            ))}
 
-
-
-            <li>
-              <a
-                href="#education"
-                onClick={() => setOpen(false)}
-                className="block text-black hover:text-gray-500"
-              >
-                Education
-              </a>
-            </li>
-
-
-
-            <li>
-              <a
-                href="#skills"
-                onClick={() => setOpen(false)}
-                className="block text-black hover:text-gray-500"
-              >
-                Skills
-              </a>
-            </li>
-
-
-
-            <li>
-              <a
-                href="#projects"
-                onClick={() => setOpen(false)}
-                className="block text-black hover:text-gray-500"
-              >
-                Projects
-              </a>
-            </li>
-
-
-
-            <li>
-              <a
-                href="#contact"
-                onClick={() => setOpen(false)}
-                className="block text-black hover:text-gray-500"
-              >
-                Contact
-              </a>
-            </li>
 
 
           </ul>
+
 
 
         </div>
@@ -203,6 +192,8 @@ export default function Navbar() {
       )}
 
 
+
     </nav>
+
   );
 }

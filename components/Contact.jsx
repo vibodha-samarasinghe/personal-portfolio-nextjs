@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
+
 export default function Contact() {
 
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ export default function Contact() {
     email: "",
     message: ""
   });
+
 
   const [status, setStatus] = useState("");
 
@@ -23,7 +25,6 @@ export default function Contact() {
     });
 
   };
-
 
 
 
@@ -47,9 +48,7 @@ export default function Contact() {
       });
 
 
-
       const data = await response.json();
-
 
 
       if (data.success) {
@@ -58,11 +57,9 @@ export default function Contact() {
 
 
         setFormData({
-
           name: "",
           email: "",
           message: ""
-
         });
 
 
@@ -73,7 +70,6 @@ export default function Contact() {
       }
 
 
-
     } catch (error) {
 
       console.log(error);
@@ -81,7 +77,6 @@ export default function Contact() {
       setStatus("Something went wrong ❌");
 
     }
-
 
   };
 
@@ -93,29 +88,62 @@ export default function Contact() {
 
     <section
       id="contact"
-      className="py-20 px-6 bg-gray-100"
+      className="
+      min-h-screen
+      flex
+      items-center
+      justify-center
+      px-6
+      py-20
+      bg-transparent
+      "
     >
 
 
-      <div className="max-w-3xl mx-auto">
+
+      <div className="max-w-4xl w-full">
 
 
 
-        <h2 className="text-4xl font-bold text-black text-center mb-10">
+        <h2
+          className="
+          text-4xl
+          md:text-5xl
+          font-bold
+          text-white
+          text-center
+          mb-10
+          "
+        >
           Contact Me
         </h2>
 
 
 
 
-        <div className="bg-gray-900 text-white rounded-2xl p-6 shadow-lg">
+        <div
+          className="
+          bg-white/10
+          backdrop-blur-xl
+          border
+          border-white/20
+          rounded-3xl
+          p-6
+          md:p-10
+          shadow-2xl
+          "
+        >
 
 
 
-          <p className="text-center text-gray-300 mb-6">
-
+          <p
+            className="
+            text-center
+            text-gray-300
+            mb-8
+            "
+          >
             Feel free to contact me for collaborations or opportunities.
-
           </p>
 
 
@@ -124,23 +152,26 @@ export default function Contact() {
 
           {/* Contact Details */}
 
-          <div className="text-center space-y-3 text-gray-300 mb-8">
-
-
-            <p>
-                Email: vibodhayws@gmail.com
-            </p>
-
-
-            <p>
-                Phone: +94 711186456
-            </p>
-
+          <div
+            className="
+            text-center
+            space-y-3
+            text-gray-300
+            mb-10
+            "
+          >
 
             <p>
-                Address: Madawala ulpotha,Matale,Sri Lanka.
+              📧 vibodhayws@gmail.com
             </p>
 
+            <p>
+              📱 +94 711186456
+            </p>
+
+            <p>
+              📍 Madawala Ulpotha, Matale, Sri Lanka
+            </p>
 
           </div>
 
@@ -149,7 +180,7 @@ export default function Contact() {
 
 
 
-          {/* Contact Form */}
+          {/* Form */}
 
           <form
             onSubmit={handleSubmit}
@@ -170,7 +201,18 @@ export default function Contact() {
 
               onChange={handleChange}
 
-              className="w-full p-3 rounded-lg bg-white text-black placeholder-gray-500"
+              className="
+              w-full
+              p-3
+              rounded-xl
+              bg-white/10
+              border
+              border-white/20
+              text-white
+              placeholder-gray-400
+              outline-none
+              focus:border-white
+              "
 
               required
 
@@ -192,7 +234,18 @@ export default function Contact() {
 
               onChange={handleChange}
 
-              className="w-full p-3 rounded-lg bg-white text-black placeholder-gray-500"
+              className="
+              w-full
+              p-3
+              rounded-xl
+              bg-white/10
+              border
+              border-white/20
+              text-white
+              placeholder-gray-400
+              outline-none
+              focus:border-white
+              "
 
               required
 
@@ -210,17 +263,29 @@ export default function Contact() {
 
               placeholder="Your Message"
 
-              rows="5"
+              rows={5}
 
               value={formData.message}
 
               onChange={handleChange}
 
-              className="w-full p-3 rounded-lg bg-white text-black placeholder-gray-500"
+              className="
+              w-full
+              p-3
+              rounded-xl
+              bg-white/10
+              border
+              border-white/20
+              text-white
+              placeholder-gray-400
+              outline-none
+              focus:border-white
+              "
 
               required
 
-            ></textarea>
+            />
+
 
 
 
@@ -231,7 +296,16 @@ export default function Contact() {
 
               type="submit"
 
-              className="px-6 py-3 bg-black text-white rounded-xl hover:bg-gray-800 transition"
+              className="
+              px-8
+              py-3
+              rounded-xl
+              bg-white
+              text-black
+              font-semibold
+              hover:bg-gray-200
+              transition
+              "
 
             >
 
@@ -241,9 +315,7 @@ export default function Contact() {
 
 
 
-
           </form>
-
 
 
 
@@ -268,8 +340,16 @@ export default function Contact() {
 
           {/* Social Links */}
 
-          <div className="mt-8 flex justify-center gap-6">
 
+          <div
+            className="
+            mt-10
+            flex
+            justify-center
+            gap-8
+            text-white
+            "
+          >
 
 
             <a
@@ -278,11 +358,17 @@ export default function Contact() {
 
               target="_blank"
 
-              className="flex items-center gap-2 hover:text-gray-300"
+              className="
+              flex
+              items-center
+              gap-2
+              hover:text-gray-300
+              transition
+              "
 
             >
 
-              <FaGithub size={28} />
+              <FaGithub size={28}/>
 
               GitHub
 
@@ -298,16 +384,21 @@ export default function Contact() {
 
               target="_blank"
 
-              className="flex items-center gap-2 hover:text-gray-300"
+              className="
+              flex
+              items-center
+              gap-2
+              hover:text-gray-300
+              transition
+              "
 
             >
 
-              <FaLinkedin size={28} />
+              <FaLinkedin size={28}/>
 
               LinkedIn
 
             </a>
-
 
 
           </div>
@@ -318,12 +409,11 @@ export default function Contact() {
         </div>
 
 
-
       </div>
 
 
-
     </section>
+
 
   );
 
